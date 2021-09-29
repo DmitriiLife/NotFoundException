@@ -13,13 +13,13 @@ public class ProductManager {
         this.repository = repository;
     }
 
-    public void add(Product item) {
-        repository.save(item);
-    }
+    public void findById(int id) { repository.findById(id);}
 
-    public void removeById(int id) {
-        repository.removeById(id);
-    }
+    public void findAll() { repository.findAll();}
+
+    public void removeById(int id) { repository.removeById(id);}
+
+    public void save(Product item) { repository.save(item);}
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0];
@@ -33,7 +33,6 @@ public class ProductManager {
         }
         return result;
     }
-
 
     public boolean matches(Product product, String search) {
         if (product instanceof Book) {
